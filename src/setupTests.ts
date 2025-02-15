@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom/vitest";
-import { server } from "./mocks/node.js";
+import { server } from "./mocks/node";
 
 beforeAll(() => {
   server.listen();
