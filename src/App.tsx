@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
-import { useDocumentLanguage } from "./hooks/useSetDocumentLanguage";
+import { useDocumentLanguage } from "./hooks/useDocumentLanguage";
 import viteLogo from "/vite.svg";
 
 function App() {
