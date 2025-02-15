@@ -5,7 +5,7 @@ import reactLogo from "./assets/react.svg";
 import { useDocumentLanguage } from "./hooks/useDocumentLanguage";
 import viteLogo from "/vite.svg";
 
-function App() {
+export function App() {
   const [count, setCount] = useState(0);
   const { t, i18n } = useTranslation();
 
@@ -57,5 +57,3 @@ function App() {
     </>
   );
 }
-
-export default App;
