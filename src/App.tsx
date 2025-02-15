@@ -12,9 +12,7 @@ function App() {
   useDocumentLanguage();
 
   function changeLanguage(lang: string) {
-    i18n.changeLanguage(lang).catch((error) => {
-      console.error("Failed to change language", error);
-    });
+    void i18n.changeLanguage(lang);
   }
 
   return (
