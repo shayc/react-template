@@ -2,11 +2,14 @@ import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
+import { useSetDocumentLanguage } from "./hooks/useSetDocumentLanguage";
 import viteLogo from "/vite.svg";
 
 function App() {
   const [count, setCount] = useState(0);
   const { t, i18n } = useTranslation();
+
+  useSetDocumentLanguage();
 
   function changeLanguage(lang: string) {
     i18n.changeLanguage(lang).catch((error) => {
