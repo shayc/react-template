@@ -2,7 +2,7 @@
   "viteLogo": "לוגו ויט",
   "reactLogo": "לוגו ריאקט",
   "vitePlusReact": "ויט + ריאקט",
-  "countIs": "המונה הוא",
+  "countIs": "מונה",
   "editAndSave": "ערוך ושמור את <1>src/App.tsx</1> כדי לבדוק את HMR",
-  "clickToLearnMore": "לחצו על לוגו ויט וריאקט כדי ללמוד עוד"
+  "clickToLearnMore": "לחץ על לוגו ויט או ריאקט כדי ללמוד עוד"
 }
