@@ -3,5 +3,6 @@
   "reactLogo": "React Logo",
   "vitePlusReact": "Vite + React",
   "countIs": "count is",
+  "editAndSave": "Edit <1>src/App.tsx</1> and save to test HMR",
   "clickToLearnMore": "Click on the Vite and React logos to learn more"
 }
