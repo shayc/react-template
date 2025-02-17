@@ -4,11 +4,23 @@ import reactLogo from "../../assets/react.svg";
 import viteLogo from "/vite.svg";
 
 export function Home() {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [count, setCount] = useState(0);
+
+  function changeLanguage(lang: string) {
+    void i18n.changeLanguage(lang);
+  }
 
   return (
     <div>
+      <button type="button" onClick={() => changeLanguage("en")}>
+        en
+      </button>
+
+      <button type="button" onClick={() => changeLanguage("he")}>
+        he
+      </button>
+
       <div>
         <a href="https://vite.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt={`${t("viteLogo")}`} />
