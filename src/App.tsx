@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { Route, Routes } from "react-router";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
 import { useDocumentLanguage } from "./hooks/useDocumentLanguage";
+import { About } from "./pages/About/About";
+import { Home } from "./pages/Home/Home";
 import viteLogo from "/vite.svg";
 
 export function App() {
@@ -54,6 +57,11 @@ export function App() {
       <button type="button" onClick={() => changeLanguage("he")}>
         he
       </button>
+
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+      </Routes>
     </>
   );
 }
