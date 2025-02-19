@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-const languageOptions = [
+const languages = [
   { code: "en", name: "English" },
   { code: "he", name: "עברית" },
   { code: "fr", name: "Français" },
@@ -21,9 +21,9 @@ export function LanguageSelector() {
       value={i18n.language}
       onChange={(event) => void i18n.changeLanguage(event.target.value)}
     >
-      {languageOptions.map((language) => (
-        <option key={language.code} value={language.code}>
-          {language.name}
+      {languages.map((lang) => (
+        <option key={lang.code} value={lang.code}>
+          {lang.name}
         </option>
       ))}
     </select>
