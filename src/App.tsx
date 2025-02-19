@@ -1,6 +1,6 @@
 import { lazy } from "react";
-import { useTranslation } from "react-i18next";
 import { Link, Route, Routes } from "react-router";
+import { LanguageSelector } from "./components/LanguageSelector/LanguageSelector";
 import { useDocumentLanguage } from "./hooks/useDocumentLanguage";
 
 const Home = lazy(() =>
@@ -16,29 +16,22 @@ const About = lazy(() =>
 );
 
 export function App() {
-  const { i18n } = useTranslation();
-
   useDocumentLanguage();
-
-  function changeLanguage(lang: string) {
-    void i18n.changeLanguage(lang);
-  }
 
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-      </nav>
-      <div>
-        <button type="button" onClick={() => changeLanguage("en")}>
-          en
-        </button>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
 
-        <button type="button" onClick={() => changeLanguage("he")}>
-          he
-        </button>
-      </div>
+        <LanguageSelector />
+      </nav>
 
       <Routes>
         <Route index element={<Home />} />
