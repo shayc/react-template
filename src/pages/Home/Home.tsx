@@ -1,35 +1,28 @@
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import reactLogo from "../../assets/react.svg";
+import classes from "./Home.module.css";
 import viteLogo from "/vite.svg";
 
 export function Home() {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const [count, setCount] = useState(0);
 
-  function changeLanguage(lang: string) {
-    void i18n.changeLanguage(lang);
-  }
-
   return (
-    <div>
-      <button type="button" onClick={() => changeLanguage("en")}>
-        en
-      </button>
-
-      <button type="button" onClick={() => changeLanguage("he")}>
-        he
-      </button>
-
+    <div className={classes.root}>
       <div>
         <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt={`${t("viteLogo")}`} />
+          <img
+            src={viteLogo}
+            className={classes.logo}
+            alt={`${t("viteLogo")}`}
+          />
         </a>
 
         <a href="https://react.dev" target="_blank" rel="noreferrer">
           <img
             src={reactLogo}
-            className="logo react"
+            className={`${classes.logo} ${classes.react}`}
             alt={`${t("reactLogo")}`}
           />
         </a>
@@ -37,7 +30,7 @@ export function Home() {
 
       <h1>{t("vitePlusReact")}</h1>
 
-      <div className="card">
+      <div className={classes.card}>
         <button onClick={() => setCount((count) => count + 1)}>
           {t("countIs")} {count}
         </button>
@@ -48,7 +41,7 @@ export function Home() {
           </Trans>
         </p>
       </div>
-      <p className="read-the-docs">{t("clickToLearnMore")}</p>
+      <p className={classes.readTheDocs}>{t("clickToLearnMore")}</p>
     </div>
   );
 }

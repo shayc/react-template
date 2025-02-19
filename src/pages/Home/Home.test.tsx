@@ -1,9 +1,9 @@
-import { render, screen } from "./tests/testUtils";
-import { App } from "./App";
+import { render, screen } from "../../tests/testUtils";
+import { Home } from "./Home";
 
-describe("App tests", () => {
+describe("Home tests", () => {
   it("should render the title", () => {
-    render(<App />);
+    render(<Home />);
 
     expect(
       screen.getByRole("heading", {
