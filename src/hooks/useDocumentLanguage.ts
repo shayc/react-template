@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { getLanguageDir } from "../i18n/languages";
 
 export function useDocumentLanguage() {
   const { i18n } = useTranslation();
@@ -7,6 +8,6 @@ export function useDocumentLanguage() {
   useEffect(() => {
     const lang = i18n.language || "en";
     document.documentElement.lang = lang;
-    document.documentElement.dir = ["he", "ar"].includes(lang) ? "rtl" : "ltr";
+    document.documentElement.dir = getLanguageDir(lang);
   }, [i18n.language]);
 }
