@@ -1,7 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { availableLanguages } from "../../i18n/languages";
 
-export function LanguageSelector() {
+export interface LanguageSelectorProps {
+  languages: { code: string; label: string }[];
+}
+
+export function LanguageSelector({ languages }: LanguageSelectorProps) {
   const { i18n } = useTranslation();
 
   return (
@@ -9,7 +12,7 @@ export function LanguageSelector() {
       value={i18n.language}
       onChange={(event) => void i18n.changeLanguage(event.target.value)}
     >
-      {availableLanguages.map((lang) => (
+      {languages.map((lang) => (
         <option key={lang.code} value={lang.code}>
           {lang.label}
         </option>
