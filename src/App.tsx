@@ -21,23 +21,27 @@ export function App() {
 
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
 
         <LanguageSelector languages={availableLanguages} />
-      </nav>
+      </header>
 
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Routes>
+      </main>
     </>
   );
 }

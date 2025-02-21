@@ -20,10 +20,11 @@ export const getLanguageDir = (code: string): "ltr" | "rtl" => {
   return rtlLanguages.has(code) ? "rtl" : "ltr";
 };
 
-export const availableLanguages: Language[] = Array.from(
-  supportedLanguageCodes,
-).map((code) => ({
-  code,
-  name: getLanguageName(code),
-  dir: getLanguageDir(code),
-}));
+const getLanguages = (codes: Set<string>): Language[] =>
+  Array.from(codes).map((code) => ({
+    code,
+    name: getLanguageName(code),
+    dir: getLanguageDir(code),
+  }));
+
+export const availableLanguages = getLanguages(supportedLanguageCodes);
