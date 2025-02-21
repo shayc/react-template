@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 export interface LanguageSelectorProps {
-  languages: { code: string; label: string }[];
+  languages: { code: string; name: string }[];
 }
 
 export function LanguageSelector({ languages }: LanguageSelectorProps) {
@@ -14,7 +14,7 @@ export function LanguageSelector({ languages }: LanguageSelectorProps) {
     >
       {languages.map((lang) => (
         <option key={lang.code} value={lang.code}>
-          {lang.label}
+          {lang.name}
         </option>
       ))}
     </select>
