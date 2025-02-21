@@ -22,7 +22,7 @@ export function App() {
   return (
     <>
       <header>
-        <nav>
+        <nav aria-label="main">
           <ul>
             <li>
               <Link to="/">Home</Link>
