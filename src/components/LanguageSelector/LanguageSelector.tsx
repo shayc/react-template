@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
+import { Language } from "../../i18n/languages";
 
 export interface LanguageSelectorProps {
-  languages: { code: string; name: string }[];
+  languages: Language[];
 }
 
 export function LanguageSelector({ languages }: LanguageSelectorProps) {
