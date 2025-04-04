@@ -3,6 +3,7 @@ import { Link, Route, Routes } from "react-router";
 import { LanguageSelector } from "./components/LanguageSelector/LanguageSelector";
 import { useDocumentLanguage } from "./hooks/useDocumentLanguage";
 import { availableLanguages } from "./i18n/languages";
+import { useTranslation } from "react-i18next";
 
 const Home = lazy(() =>
   import("./pages/Home/Home").then((module) => ({
@@ -17,18 +18,20 @@ const About = lazy(() =>
 );
 
 export function App() {
+  const { t } = useTranslation();
+
   useDocumentLanguage();
 
   return (
     <>
       <header>
-        <nav aria-label="main">
+        <nav aria-label={t("main")}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">{t("home")}</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about">{t("about")}</Link>
             </li>
           </ul>
         </nav>

@@ -4,5 +4,7 @@
   "vitePlusReact": "ויט + ריאקט",
   "countIs": "מונה",
   "editAndSave": "ערוך את <1>src/App.tsx</1> ושמור כדי לבדוק את HMR",
-  "clickToLearnMore": "לחץ על הלוגו של ויט או ריאקט כדי ללמוד עוד"
+  "clickToLearnMore": "לחץ על הלוגו של ויט או ריאקט כדי ללמוד עוד",
+  "home": "בית",
+  "about": "אודות"
 }
