@@ -51,7 +51,7 @@ src/
 #### `Button.tsx`
 
 ```tsx
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
@@ -75,7 +75,6 @@ export default Button;
 #### `Button.test.tsx`
 
 ```tsx
-import React from "react";
 import { render } from "@testing-library/react";
 import Button from "./Button";
 
