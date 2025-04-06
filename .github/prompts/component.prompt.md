@@ -75,11 +75,11 @@ export default Button;
 #### `Button.test.tsx`
 
 ```tsx
-import { render } from "@testing-library/react";
+import { render, screen } from "../../tests/testUtils";
 import Button from "./Button";
 
 test("renders Button component", () => {
-  const { getByText } = render(<Button>Click me</Button>);
-  expect(getByText("Click me")).toBeInTheDocument();
+  render(<Button>Click me</Button>);
+  expect(screen.getByText("Click me")).toBeInTheDocument();
 });
 ```
