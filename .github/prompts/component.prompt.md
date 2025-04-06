@@ -1,6 +1,4 @@
-# Title
-
-Create a React Component
+# Prompt: Create a React Component
 
 ## Goal
 
@@ -18,23 +16,21 @@ Generate a new React component with the specified name and structure.
 src/
 └── components/
     └── {name}/
-        └── {name}.tsx
+        ├── {name}.tsx
+        ├── {name}.module.css
+        └── {name}.test.tsx
 ```
 
 ## Instructions
 
-1. Use the provided `name` to create a new folder under `src/components/` named after the component.
-2. Inside the folder, create a `{name}.tsx` file.
-3. The `{name}.tsx` file should export a functional React component with the given name.
-4. Ensure the component includes basic TypeScript typing for props.
-5. Add a default prop if applicable.
+Ask the developer for inputs and use them to generate code based on examples below. Ensure the generated files strictly follow the structure and examples provided.
 
 ## Examples
 
 ### Input
 
 ```text
-Button
+button
 ```
 
 ### Output
@@ -43,22 +39,46 @@ Button
 src/
 └── components/
     └── Button/
-        └── Button.tsx
+        ├── Button.tsx
+        ├── Button.module.css
+        └── Button.test.tsx
 ```
 
-### Generated File: `Button.tsx`
+### Generated Files
+
+#### `Button.tsx`
 
 ```tsx
-// filepath: src/components/Button/Button.tsx
-import React from "react";
+import React, { ReactNode } from "react";
+import styles from "./Button.module.css";
 
 interface ButtonProps {
-  label?: string;
+  children?: ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ label = "Click me" }) => {
-  return <button>{label}</button>;
+const Button = ({ children }: ButtonProps) => {
+  return <button className={styles.root}>{children}</button>;
 };
 
 export default Button;
+```
+
+#### `Button.module.css`
+
+```css
+.root {
+}
+```
+
+#### `Button.test.tsx`
+
+```tsx
+import React from "react";
+import { render } from "@testing-library/react";
+import Button from "./Button";
+
+test("renders Button component", () => {
+  const { getByText } = render(<Button>Click me</Button>);
+  expect(getByText("Click me")).toBeInTheDocument();
+});
 ```
