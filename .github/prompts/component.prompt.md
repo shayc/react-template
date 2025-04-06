@@ -15,15 +15,17 @@ Generate a new React component with the specified name and structure.
 ```text
 src/
 └── components/
-    └── {name}/
-        ├── {name}.tsx
-        ├── {name}.module.css
-        └── {name}.test.tsx
+    └── {Name}/
+        ├── {Name}.tsx
+        ├── {Name}.module.css
+        └── {Name}.test.tsx
 ```
 
 ## Instructions
 
-Ask the developer for inputs and use them to generate code based on examples below. Ensure the generated files strictly follow the structure and examples provided.
+1. Ask the developer for [input](#input).
+2. Use the input to generate the component files.
+3. Follow the file structure in [output](#output).
 
 ## Examples
 
